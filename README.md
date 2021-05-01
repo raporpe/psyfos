@@ -1,5 +1,9 @@
 # Psyfos
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/58d08a7f-7ece-4cb1-ae13-b14e2a50a671/deploy-status)](https://app.netlify.com/sites/psyfos/deploys)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server
