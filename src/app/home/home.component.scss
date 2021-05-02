@@ -65,6 +65,9 @@ body {
     .text-purple{
       color: $primary;
     }
+    .text-purple-dark{
+      color: $secondary;
+    }
   /* MARKETING CONTENT
   -------------------------------------------------- */
   
@@ -119,3 +122,9 @@ body {
     }
   }
   
+
+.slide-image {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(50%)
+}
