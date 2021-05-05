@@ -5,7 +5,42 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  constructor() { }
+  usuarios: usuario[];
+  grupos: grupo[];
+  grupoSeleccionado = 0
+
+  constructor() {
+
+    this.usuarios = [new usuario(0, 'Francisco Ruiz', 'asdf', []),
+    new usuario(1, 'Elena Ortiz', 'asdf', []),
+    new usuario(2, 'Alfonso Ramos', 'asdf', [])
+    ]
+
+    this.grupos = [new grupo('Vecinos Ribaseca', '¡Buenas! En este grupo estamos dispuestos a debatir de forma democrática y con respeto.', [], [], []),
+    new grupo('CD Arroyomolinos', '¡Buenas! Jugamos para ganar, respetando siempre los valores del deporte.', [], [], []),
+    new grupo('Familia Ruiz', 'Grupo de la familia Ruiz', [], [], [])
+    ]
+
+    var votaciones = [new votacion("Construcción Piscina", true, this.usuarios, [new pregunta("¿Quiere que se construya una piscina en la comunidad?", ['Sí', 'No'])]),
+    new votacion("Renovación caldera", true, this.usuarios, [new pregunta("¿Cómo de importante considera que es renovar la caldera?", ['1', '2', '3', '4', '5'])])
+    ]
+
+    this.grupos[0].añadir_votacion(votaciones[0]);
+    this.grupos[0].añadir_votacion(votaciones[1]);
+
+    // asignando miembros a los grupos
+    for (var i = 0; i < this.grupos.length; i++) {
+      for (var j = 0; j < this.grupos.length - i; j++) {
+        this.grupos[i].añadir_miembro(this.usuarios[j])
+      }
+    }
+
+    for (var grupo_index = 0; grupo_index < this.grupos.length; grupo_index++) {
+      this.usuarios[0].añadir_grupo(this.grupos[grupo_index]);
+
+    }
+
+  }
 }
 
 
