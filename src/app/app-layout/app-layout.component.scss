@@ -9,8 +9,17 @@ $secondary: #544CB5;
 }
 
 .mini-card{
- margin: 5px;
+    font-size: clamp(0.5rem, 1.1rem, 1.5rem);
+    text-align: center;
+    padding: 30px;
+    p {
+        display: inline;
+        vertical-align: middle;
+        white-space: nowrap
+    }
 }
+
+
 
 .margin{
     margin: 0px 45px;
