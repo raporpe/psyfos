@@ -13,7 +13,9 @@ import { GruposComponent } from './grupos/grupos.component';
 import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccionado.component';
 import { VotoComponent } from './voto/voto.component';
 import { FormsModule } from '@angular/forms';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/modules/material/material.module';
 
 @NgModule({
 
@@ -32,7 +34,10 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
