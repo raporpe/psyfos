@@ -1,19 +1,23 @@
-<h1>{{grupo.nombre}}</h1>
-<p>{{grupo.descripcion}}</p>
+<div class="">
+    <h1>{{grupo.nombre}}</h1>
+    <p>{{grupo.descripcion}}</p>
 
-<button type="submit" class="btn align-self-center">🗨️Entrar en el chat grupal</button>
+    <div class="mb-3">
+        <button type="submit" class="btn mr-2">🗨️ Chatear</button>
+        <button type="submit" class="btn">- Salir del grupo</button>
+    </div>
 
-<button type="submit" class="btn align-self-center">- Salir del grupo</button>
+    <p class="col-md-4" style="font-weight: bold;">Votaciones</p>
 
-<p class="col-md-4 p-3" style="font-weight: bold;">Votaciones</p>
+    <div *ngFor="let votacion of grupo.votaciones; let i = index">
 
-<div *ngFor="let votacion of grupo.votaciones; let i = index" style="">
-    {{votacion.titulo}}
-    <br>
+        <div class="votacion">
+            {{votacion.titulo}}
+            <br>
 
-    <button type="submit" routerLink="/voto" class="align-self-center">📥Votar</button>
-    <button type="submit" class="btn align-self-center">📝Editar</button>
-
-    <button type="submit" class="btn align-self-center">- Eliminar</button>
-
+            <button type="submit" routerLink="/voto" class="btn mr-2">📥Votar</button>
+            <button type="submit" class="btn mr-2">📝Editar</button>
+            <button type="submit" class="btn mr-2">- Eliminar</button>
+        </div>
+    </div>
 </div>
