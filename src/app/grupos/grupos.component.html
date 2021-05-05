@@ -1,12 +1,13 @@
-<h2 class="col-md-4 p-3">Mis grupos</h2>
+<h2 class="mb-5">Mis grupos</h2>
 
 <div *ngFor="let grupo of grupos; let i = index">
     <div *ngIf="i===this.grupoSeleccionado; else otherButton">
-        <button (click)="this.sendSelectedGroup(i)" class="btn align-self-center">{{grupo.nombre}}</button>
+        <button (click)="this.sendSelectedGroup(i)" class="btn align-self-center mb-2">{{grupo.nombre}}</button>
     </div>
 
     <ng-template #otherButton>
-        <button (click)="this.sendSelectedGroup(i)" class="btn align-self-center col-sel">{{grupo.nombre}}</button>
+        <button (click)="this.sendSelectedGroup(i)"
+            class="btn align-self-center col-sel  mb-2">{{grupo.nombre}}</button>
     </ng-template>
 </div>
 

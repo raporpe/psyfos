@@ -1,7 +1,12 @@
+<div class="d-flex align-items-center">
+    <div class="">
+        <h2 class="mb-4">Miembros</h2>
 
-<h2 class="col-md-4 p-3">Miembros</h2>
+        <p *ngFor="let miembro of grupo.usuarios; let i = index">
+            {{miembro.nombre_usuario}}
+        </p>
 
-<p *ngFor="let miembro of grupo.usuarios; let i = index">{{miembro.nombre_usuario}}</p>
-
-<button type="submit" class="btn ">+ Añadir Miembro</button>
-<button type="submit" class="btn align-self-center">- Eliminar Miembro</button>
+        <button type="submit" class="btn mb-3">+ Añadir Miembro</button>
+        <button type="submit" class="btn align-self-center">- Eliminar Miembro</button>
+    </div>
+</div>
