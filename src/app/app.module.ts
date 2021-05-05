@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MiembrosComponent } from './miembros/miembros.component';
+import { GruposComponent } from './grupos/grupos.component';
+import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccionado.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     AppLayoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    MiembrosComponent,
+    GruposComponent,
+    GrupoSeleccionadoComponent
   ],
   imports: [
     BrowserModule,
