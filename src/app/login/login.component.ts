@@ -7,8 +7,13 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  email: string = "";
-  password: string = "";
+
+  loginEmail: string = "";
+  loginPassword: string = "";
+
+  registerName: string = "";
+  registerEmail: string = "";
+  registerPassword: string = "";
 
   constructor() {
 
@@ -24,14 +29,24 @@ export class LoginComponent implements OnInit {
 
   }
 
-  validateMail(): boolean {
-    return this.email.length > 1;
+  validateLoginEmail(): boolean {
+    return this.loginEmail.length > 1;
   }
 
-  validatePassword(): boolean {
-    return this.password.length > 8;
+  validateLoginPassword(): boolean {
+    return this.loginPassword.length > 8;
   }
 
 
+  validateRegisterName(): boolean {
+    return this.registerName.length > 8;
+  }
 
+  validateRegisterEmail(): boolean {
+    return this.registerEmail.length > 8;
+  }
+
+  validateRegisterPassword(): boolean {
+    return this.registerPassword.length > 8;
+  }
 }
