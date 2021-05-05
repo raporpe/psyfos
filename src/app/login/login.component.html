@@ -7,14 +7,23 @@
     <h3>Bienvenido de nuevo.</h3>
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <label class="form-label" for="form1Example1">Correo Electrónico</label>
-      <input type="email" id="form1Example1" placeholder="Introduce tu correo aquí..." class="form-control" />
+      <label class="form-label" for="loginEmail">Correo Electrónico</label>
+      <input type="email" id="loginEmail" placeholder="Introduce tu correo aquí..." class="form-control"
+        [(ngModel)]="email" #loginEmail="ngModel" name="loginEmail"
+        [ngClass]="{'is-invalid' : !validateMail() && (loginEmail.dirty || loginEmail.touched)}" />
+      <div class="invalid-feedback" *ngIf="!validateMail() && (loginEmail.dirty || loginEmail.touched)">
+        Comprueba que tu correo electrónico es correcto.</div>
     </div>
 
     <!-- Password input -->
     <div class="form-outline mb-4">
       <label class="form-label" for="form1Example2">Contraseña</label>
-      <input type="password" id="form1Example2" placeholder="Introduce tu contraseña aquí..." class="form-control" />
+      <input type="password" id="form1Example2" placeholder="Introduce tu contraseña aquí..." class="form-control"
+        name="loginPassword" #loginPassword="ngModel"
+        [ngClass]="{'is-invalid' : !validatePassword() && (loginPassword.dirty || loginPassword.touched)}"
+        [(ngModel)]="password" />
+      <div class="invalid-feedback" *ngIf="!validatePassword() && (loginPassword.dirty || loginPassword.touched)">
+        Comprueba que tu contraseña está bien escrita.</div>
     </div>
 
     <!-- Submit button -->

@@ -12,6 +12,7 @@ import { MiembrosComponent } from './miembros/miembros.component';
 import { GruposComponent } from './grupos/grupos.component';
 import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccionado.component';
 import { VotoComponent } from './voto/voto.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { VotoComponent } from './voto/voto.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
