@@ -1,30 +1,36 @@
 <div class="bg-primary py-5">
 
-
-
-
     <div class="d-flex justify-content-center align-items-center h-100">
-
         <div class="col-md-8">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-layout p-3 mb-2">
+                        <h4 style="font-size: 1rem;">⬅ Atrás</h4>
+                    </div>
+                </div>
 
-            <div class='d-flex justify-content-center align-items-center h-100  margin'>
-                <div class="card-layout p-3  justify-content-center mini-card">
-                    <h4 style="font-size: 1.5vw;">⬅ Atrás</h4>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-layout p-3 mb-2">
+                        <h4 style="font-size: 1rem;">❓ Ayuda</h4>
+                    </div>
                 </div>
-                <div class="card-layout p-3 justify-content-center mini-card">
-                    <h4 style="font-size: 1.5vw;">❓ Ayuda</h4>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-layout p-3 mb-2">
+                        <h4 style="font-size: 1rem;">⚙️ Configuración</h4>
+                    </div>
                 </div>
-                <div class="card-layout p-3  justify-content-center mini-card">
-                    <h4 style="font-size: 1.5vw;">⚙️ Configuración</h4>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="card-layout p-3 mb-2">
+                        <h4 style="font-size: 1rem;">✖ Cerrar sesión</h4>
+                    </div>
                 </div>
-                <div class="card-layout p-3  justify-content-center mini-card">
-                    <h4 style="font-size: 1.5vw;">✖ Cerrar sesión</h4>
-                </div>
+
+            </div>
+            <div class="card-layout p-4">
+                <router-outlet></router-outlet>
             </div>
         </div>
-        <div class=" card-layout p-4">
-            <router-outlet></router-outlet>
-        </div>
-
     </div>
 </div>
