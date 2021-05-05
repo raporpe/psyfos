@@ -5,17 +5,17 @@
 
     <button type="submit" class="btn align-self-center">🗨️Entrar en el chat grupal</button>
 
-    <button type="submit" class="btn align-self-center">➖Salir del grupo</button>
+    <button type="submit" class="btn align-self-center">- Salir del grupo</button>
 
 <p class="col-md-4 p-3" style="font-weight: bold;">Votaciones</p>
 
 <div *ngFor="let votacion of grupo.votaciones; let i = index" style="">
     {{votacion.titulo}}
     <br>
-    
-        <button type="submit" routerLink="/voto" class="btn align-self-center">📥Votar</button>
+
+        <button type="submit" routerLink="/voto" class="align-self-center">📥Votar</button>
         <button type="submit" class="btn align-self-center">📝Editar</button>
 
-        <button type="submit" class="btn align-self-center">➖Eliminar</button>
+        <button type="submit" class="btn align-self-center">- Eliminar</button>
 
 </div>

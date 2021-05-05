@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +14,9 @@ import { GruposComponent } from './grupos/grupos.component';
 import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccionado.component';
 import { VotoComponent } from './voto/voto.component';
 
+
 @NgModule({
+
   declarations: [
     AppComponent,
     HomeComponent,
@@ -24,13 +27,15 @@ import { VotoComponent } from './voto/voto.component';
     MiembrosComponent,
     GruposComponent,
     GrupoSeleccionadoComponent,
-    VotoComponent
+    VotoComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

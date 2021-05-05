@@ -1,4 +1,3 @@
-import { prepareSyntheticListenerName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +9,11 @@ export class DashboardComponent implements OnInit {
 
   usuarios: usuario[];
   grupos: grupo[];
+  grupoSeleccionado = 0
+  cambiarGrupoSelecionado(newGroup:number){
+    this.grupoSeleccionado = newGroup;
+  }
+   
   constructor() {
 
     this.usuarios = [new usuario(0, 'Francisco Ruiz', 'asdf', []),
@@ -47,10 +51,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
-
-
 
 }
 

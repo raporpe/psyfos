@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grupos',
@@ -14,9 +14,17 @@ export class GruposComponent implements OnInit {
 
   }
 
+  grupoSeleccionado = 0
+  @Output()
+  sendGroup = new EventEmitter<number>();
+
+
 
   @Input()
   grupos: any;
 
-
+  sendSelectedGroup(selectedGroup: number) {
+    this.grupoSeleccionado = selectedGroup;
+    this.sendGroup.emit(selectedGroup);
+  }
 }
