@@ -13,7 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'voto', component: VotoComponent },
+      { path: 'voto/:id', component: VotoComponent },
     ]
   }
 ];
