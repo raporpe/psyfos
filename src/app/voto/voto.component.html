@@ -1,1 +1,263 @@
-<p>voto works!</p>
+<div>
+    <h5>¿Quiere reformar la piscina</h5>
+    <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">Si</option>
+        <option value="2">No</option>
+    </select>
+    <div class="form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+            Si a construir la piscina
+        </label>
+    </div>
+    <div class="form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+            No construir la piscina
+        </label>
+    </div>
+    <div class="form-check disabled">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+        <label class="form-check-label" for="exampleRadios3">
+            Disabled radio
+        </label>
+    </div>
+    <p>
+        <button type="button" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-ok"></span>Vote</button>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#results" style="float:right">
+                View Result</button>
+    </p>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-arrow-right"></span>How is My Site? <a
+                            href="http://www.jquery2dotnet.com" target="_blank"><span
+                                class="glyphicon glyphicon-new-window"></span></a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Good
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Excellent
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Bed
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    Can Be Improved
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios">
+                                    No Comment
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-ok"></span>Vote</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#results" style="float:right">
+                            View Result</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-hand-right"></span>Where do you get your news?
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Internet
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Television
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Radio
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Newspaper
+                                </label>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Others
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer text-center">
+                    <button type="button" class="btn btn-success btn-sm">
+                        <span class="glyphicon glyphicon-ok"></span>Vote</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#results" style="float:right">
+                        View Result</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-circle-arrow-right"></span>Where do you get your news?
+                    </h3>
+                </div>
+                <div class="panel-body two-col">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="well well-sm">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Internet
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well well-sm">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Television
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="well well-sm margin-bottom-none">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Radio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well well-sm margin-bottom-none">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        Newspaper
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok"></span>Vote</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#results" style="float:right">
+                            View Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="results" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="span6">
+                    <h5>Poll: Where do you usually browse</h5>
+                    <strong>Windows PC</strong><span class="pull-right">30%</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <strong>Mac</strong><span class="pull-right">40%</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 40%" aria-valuenow="50"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <strong>iPad/iPhone</strong><span class="pull-right">10%</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 10%" aria-valuenow="75"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <strong>Android</strong><span class="pull-right">5%</span>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 5%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <strong>Others</strong><span class="pull-right">15%</span>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar" role="progressbar" style="width: 15%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,8 @@
-<p class="col-md-4 p-3">miembros works!</p>
+
+<h2 class="col-md-4 p-3">Miembros</h2>
+
+<p *ngFor="let miembro of grupo; let i = index">{{miembro.nombre}}</p>
+
+<button type="button" class="n btn-success align-self-center">Success</button>
+<button type="submit" class="btn ">Añadir Miembro</button>
+<button type="submit" class="btn align-self-center">Eliminar Miembro</button>

@@ -1,3 +1,8 @@
-<app-grupos></app-grupos>
-<app-grupo-seleccionado></app-grupo-seleccionado>
-<app-miembros></app-miembros>
+<div class = "row gx-5 gy-5">
+<app-grupos class = "col-md-4 p-3" [grupos]="this.grupos"></app-grupos>
+<app-grupo-seleccionado class = "col-md-4 p-3" [grupo]="this.grupos[0]"></app-grupo-seleccionado>
+<app-miembros class = "col-md-4 p-3" [grupo]="this.grupos[0]"></app-miembros>
+</div>
+<div class="d-flex justify-content-center">
+    <button type="submit" routerLink="/voto" class="btn align-self-center">Voto</button>
+</div>

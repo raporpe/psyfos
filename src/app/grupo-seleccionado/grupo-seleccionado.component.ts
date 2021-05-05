@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-grupo-seleccionado',
@@ -12,4 +12,6 @@ export class GrupoSeleccionadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input()
+  grupo: any;
 }

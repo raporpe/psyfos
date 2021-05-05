@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-grupos',
@@ -10,6 +10,13 @@ export class GruposComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
+
+
+  @Input()
+  grupos: any;
+
 
 }
