@@ -10,10 +10,10 @@ export class DashboardComponent implements OnInit {
   usuarios: usuario[];
   grupos: grupo[];
   grupoSeleccionado = 0
-  cambiarGrupoSelecionado(newGroup:number){
+  cambiarGrupoSelecionado(newGroup: number) {
     this.grupoSeleccionado = newGroup;
   }
-   
+
   constructor() {
 
     this.usuarios = [new usuario(0, 'Francisco Ruiz', 'asdf', []),
