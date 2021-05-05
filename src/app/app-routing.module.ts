@@ -4,7 +4,6 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { VotoComponent } from './voto/voto.component';
 
 const routes: Routes = [
