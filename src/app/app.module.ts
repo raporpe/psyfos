@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MiembrosComponent } from './miembros/miembros.component';
 import { GruposComponent } from './grupos/grupos.component';
 import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccionado.component';
+import { VotoComponent } from './voto/voto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GrupoSeleccionadoComponent } from './grupo-seleccionado/grupo-seleccion
     DashboardComponent,
     MiembrosComponent,
     GruposComponent,
-    GrupoSeleccionadoComponent
+    GrupoSeleccionadoComponent,
+    VotoComponent
   ],
   imports: [
     BrowserModule,

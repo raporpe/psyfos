@@ -22,8 +22,8 @@ export class DashboardComponent implements OnInit {
     new grupo('Familia Ruiz', 'Grupo de la familia Ruiz', [], [], [])
     ]
 
-    var votaciones = [new votacion("Construcción Piscina", true, this.usuarios, [new pregunta("¿Quiere que se construya una piscina en la comuidad?", ['Sí', 'No'])]),
-    new votacion("Importancia caldera", true, this.usuarios, [new pregunta("¿Cómo de importante considera que es renovar la caldera?", ['1', '2', '3', '4', '5'])])
+    var votaciones = [new votacion("Construcción Piscina", true, this.usuarios, [new pregunta("¿Quiere que se construya una piscina en la comunidad?", ['Sí', 'No'])]),
+    new votacion("Renovación caldera", true, this.usuarios, [new pregunta("¿Cómo de importante considera que es renovar la caldera?", ['1', '2', '3', '4', '5'])])
     ]
 
     this.grupos[0].añadir_votacion(votaciones[0]);
@@ -36,7 +36,12 @@ export class DashboardComponent implements OnInit {
       }
     }
 
-    
+    for (var grupo_index = 0; grupo_index < this.grupos.length; grupo_index++) {
+      this.usuarios[0].añadir_grupo(this.grupos[grupo_index]);
+
+    }
+
+
 
   }
 
@@ -53,13 +58,15 @@ class usuario {
   id: number;
   nombre_usuario: string;
   contraseña: string;
+  foto_perfil: string;
   grupos: grupo[];
 
 
-  constructor(id: number, nombre_usuario: string, contraseña: string, grupos: grupo[]) {
-    this.id = id;
+  constructor(id: number, nombre_usuario: string, contraseña: string, grupos: grupo[], foto_perfil: string = "assets/foto_perfil_defecto.png") {
+    this.id = id
     this.nombre_usuario = nombre_usuario;
     this.contraseña = contraseña;
+    this.foto_perfil = foto_perfil;
     this.grupos = grupos;
   }
   public añadir_grupo(nuevo_grupo: grupo) {
