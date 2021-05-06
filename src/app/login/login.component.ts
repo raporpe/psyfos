@@ -21,6 +21,8 @@ export class LoginComponent implements OnInit {
   registerPassword: string = "";
   usuarios: usuario[];
 
+  errorLogin = false;
+  errorRegister = false;
 
   constructor(private data: DataService, private router: Router) {
     this.usuarios = []
@@ -28,40 +30,45 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.data.setShowButton(true);
+    localStorage.setItem("logged", "false");
   }
 
-  checkForm() {
 
+  makeLogin() {
 
+    var email = localStorage.getItem("email");
+    var password = localStorage.getItem("password");
 
+    if (this.loginEmail != "" && this.loginPassword != "" &&
+      this.loginEmail == email && this.loginPassword == password &&
+      this.validateLoginEmail && this.validateLoginPassword) {
 
-  }
-
-  makeLogin(data: any) {
-    console.log(data)
-    // alert("Entered Email id : " + data.loginEmailForm);
-    // alert("Entered Email id : " + data.loginPasswordForm);
-    var usuario = this.encuentraUsuario(data.loginEmailForm, data.loginPasswordForm);
-
-    if (usuario !== undefined) {
       this.router.navigate(['/dashboard']);
-    } else {
+      this.errorLogin = false;
+      localStorage.setItem("logged", "true");
 
-      alert('wrong credentials')
+
+    } else {
+      this.errorLogin = true;
     }
 
-
   }
 
-  makeRegister(data: any) {
-    console.log(data);
+  makeRegister() {
 
-    var nuevo_usuario: usuario = new usuario(0, data.registerNameForm, data.registerEmailForm, data.registerPasswordForm, []);
-    this.data.registrarUsuario(nuevo_usuario);
+    if (this.validateRegisterEmail() && this.validateRegisterName() && this.validateRegisterPassword()) {
+      this.errorRegister = false;
+
+      localStorage.setItem('name', this.registerName);
+      localStorage.setItem('email', this.registerEmail);
+      localStorage.setItem('password', this.registerPassword);
+
+    } else {
+      this.errorRegister = true;
+    }
+
     this.queryInformation();
-    console.log(this.usuarios)
+
   }
 
   encuentraUsuario(email: string, contraseña: string): usuario | undefined {
@@ -74,15 +81,12 @@ export class LoginComponent implements OnInit {
     }
     return undefined;
   }
+
+
   queryInformation() {
     this.usuarios = this.data.getUsuarios()!;
-
   }
 
-
-  validarLogin() {
-
-  }
 
 
   validateLoginEmail(): boolean {
@@ -97,11 +101,13 @@ export class LoginComponent implements OnInit {
 
 
   validateRegisterName(): boolean {
-    return this.registerName.length > 8;
+    return this.registerName.length > 1;
   }
 
   validateRegisterEmail(): boolean {
-    return this.registerEmail.length > 8;
+    var regexp = new RegExp("^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$");
+    var email = regexp.test(this.registerEmail);
+    return email;
   }
 
   validateRegisterPassword(): boolean {

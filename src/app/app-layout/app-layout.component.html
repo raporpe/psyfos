@@ -26,15 +26,15 @@
                         <p> Ajustes</p>
                     </div>
                 </div>
-            
-                <div class="col-xl-3 col-sm-6" routerLink="/login" *ngIf = 'this.show'>
-                    <div class="card-layout mini-card p-3 mb-3 red_hover" s>
+
+                <div class="col-xl-3 col-sm-6" (click)="logOut();" [hidden]='!show'>
+                    <div class="card-layout mini-card p-3 mb-3 red_hover">
                         <p>
                             <mat-icon class="align-middle white">close</mat-icon> Cerrar sesión
                         </p>
                     </div>
                 </div>
-            
+
 
             </div>
             <div class="card-layout p-4">

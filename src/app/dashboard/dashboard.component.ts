@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data.setShowButton(false);
+    this.data.setShowButton(true);
   }
 
   queryInformation() {
