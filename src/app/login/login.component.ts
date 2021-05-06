@@ -105,9 +105,8 @@ export class LoginComponent implements OnInit {
   validateRegisterName(): boolean {
     return this.registerName.length > 1;
   }
-
   validateRegisterEmail(): boolean {
-    var regexp = new RegExp("^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$");
+    var regexp = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
     var email = regexp.test(this.registerEmail);
     return email;
   }
