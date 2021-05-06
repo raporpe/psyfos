@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService, opcion } from '../data.service';
 @Component({
   selector: 'app-voto',
   templateUrl: './voto.component.html',
@@ -50,6 +50,10 @@ export class VotoComponent implements OnInit {
     }
   }
 
+  getPreguntas() {
+    return this.votacionActual.preguntas
+  }
+
 
   getNumeroPregunta() {
     return this.pregunta
@@ -67,6 +71,12 @@ export class VotoComponent implements OnInit {
   getTitle() {
 
 
+  }
+
+  getTotalVotos(pregunta: number) :number {
+    let resultado = this.votacionActual.preguntas[pregunta].opciones.reduce((sum: number, current: opcion) => sum + current.votos);
+    console.log(resultado)
+    return resultado
   }
 
 
