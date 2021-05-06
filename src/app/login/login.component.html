@@ -4,7 +4,7 @@
 
 <div class="row gx-5 gy-5">
 
-  <form class="col-md-6 p-3">
+  <form #userlogin = "ngForm"  class="col-md-6 p-3" (ngSubmit)="makeLogin(userlogin.value)">
 
     <h3>Bienvenido de nuevo.</h3>
     <!-- Email login input -->
@@ -29,14 +29,20 @@
         Comprueba que tu contraseña está bien escrita.</div>
     </div>
 
+
+    <div id="login-alert" class="alert alert-danger" role="alert">
+      Las <strong> credenciales son incorrectas</strong> Introdúzcalas de nuevo por favor.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+    </div>
+
     <!-- Submit login button -->
     <div class="d-flex justify-content-center">
-      <button type="submit" routerLink="/dashboard" class="btn align-self-center">Acceder</button>
+      <button type="submit"  class="btn align-self-center">Acceder</button>
     </div>
   </form>
 
 
-  <form class="col-md-6 p-3 vl">
+  <form class="col-md-6 p-3 vl" #userRegister = "ngForm" (ngSubmit)="makeRegister(userRegister.value)">
     <h3>¿Sin cuenta?</h3>
     <!-- Name register input -->
     <div class="form-outline mb-4">
@@ -73,7 +79,7 @@
 
     <!-- Submit register button -->
     <div class="d-flex justify-content-center">
-      <button type="submit" routerLink="/dashboard" class="btn align-self-center">Registrarse</button>
+      <button type="submit" class="btn align-self-center">Registrarse</button>
     </div>
 
     <p class='py-2'>Al registrarte, aceptas que Psyfos trate tus datos de acuerdo a su Política de Privacidad.</p>
