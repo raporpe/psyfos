@@ -8,13 +8,14 @@ export class DataService {
 
   usuarios: usuario[];
   grupos: grupo[];
-  votaciones: votacion[]
+  votaciones: votacion[];
+  showButton: boolean;
 
   constructor() {
 
-    this.usuarios = [new usuario(0, 'Francisco Ruiz','ruiz@gmail.com', 'asdf', []),
-    new usuario(1, 'Elena Ortiz', 'asdf','ruiz@gmail.com', []),
-    new usuario(2, 'Alfonso Ramos', 'asdf','ruiz@gmail.com', [])
+    this.usuarios = [new usuario(0, 'Francisco Ruiz', 'ruiz@gmail.com', 'asdf', []),
+    new usuario(1, 'Elena Ortiz', 'asdf', 'ruiz@gmail.com', []),
+    new usuario(2, 'Alfonso Ramos', 'asdf', 'ruiz@gmail.com', [])
     ]
 
     this.grupos = [new grupo(0, 'Vecinos Ribaseca', '¡Buenas! En este grupo estamos dispuestos a debatir de forma democrática y con respeto.', [], [], []),
@@ -48,6 +49,8 @@ export class DataService {
 
     }
 
+    this.showButton = false;
+
 
 
 
@@ -58,8 +61,8 @@ export class DataService {
     return this.votaciones.find(x => x.id == id)
   }
 
-  registrarUsuario(nuevoUsuario:usuario){
-    
+  registrarUsuario(nuevoUsuario: usuario) {
+
     this.usuarios.push(nuevoUsuario)
   }
 
@@ -75,6 +78,16 @@ export class DataService {
   getVotaciones(): votacion[] | undefined {
     return this.votaciones;
   }
+
+  getShowButton() {
+    return this.showButton;
+  }
+
+  setShowButton(status: boolean) {
+    this.showButton = status;
+  }
+
+
 }
 
 
@@ -88,7 +101,7 @@ export class usuario {
   foto_perfil: string;
   grupos: grupo[];
 
-  constructor(id: number,nombre_usuario: string, email: string, contraseña:string , grupos: grupo[], foto_perfil: string = "assets/foto_perfil_defecto.png") {
+  constructor(id: number, nombre_usuario: string, email: string, contraseña: string, grupos: grupo[], foto_perfil: string = "assets/foto_perfil_defecto.png") {
     this.id = id;
     this.nombre_usuario = nombre_usuario;
     this.email = email;

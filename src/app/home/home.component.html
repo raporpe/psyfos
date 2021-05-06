@@ -1,157 +1,159 @@
 <div style="background-color: white;">
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#"><mat-icon class="align-middle white">forum</mat-icon> Psyfos</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active" routerLink="/login">
-        <a class="nav-link btn style=font-weight:bolder;">
-          Login / Registro <mat-icon class="align-bottom white">login</mat-icon>
-        </a>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">
+        <mat-icon class="align-middle white">forum</mat-icon> Psyfos
+      </a>
+      <ul class="navbar-nav ml-auto px-4">
+        <li class="nav-item active mr-2 " routerLink="/login">
+          <a class="nav-link btn ">
+            Entrar <mat-icon class="align-bottom white">login</mat-icon>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-        &nbsp;&nbsp;
-      </li>
-    </ul>
-  </nav>
-</header>
 
+  <main role="main">
 
-<main role="main">
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="first-slide slide-image" src="assets/carousel_1.jpg" alt="participamos-todos">
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Aquí participamos todos</h1>
-            <p>Psyfos facilita la comunicación con tus grupos, sin poner en riesgo tu salud desde tu dispositivo
-              preferido.
-              Ofrecemos nuestro servicio a todos, porque aquí participamos todos.
-            </p>
-            <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Empieza ahora!</a></p>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="first-slide slide-image" src="assets/carousel_1.jpg" alt="participamos-todos">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Aquí participamos todos</h1>
+              <p>Psyfos facilita la comunicación con tus grupos, sin poner en riesgo tu salud desde tu dispositivo
+                preferido.
+                Ofrecemos nuestro servicio a todos, porque aquí participamos todos.
+              </p>
+              <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Empieza ahora!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="second-slide slide-image" src="assets/carousel_2.jpg" alt="colaboracion">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Te damos herramientas</h1>
+              <p>Para que tu grupo y tú podáis comunicaros, podéis utilizar el chat grupal. Cuando queráis crear una
+                votación,
+                nuestro sistema se encargará de todo. ¡Fácil y sencillo!</p>
+              <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Probémoslo!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="third-slide slide-image" src="assets/carousel_3.jpg" alt="accesible">
+          <div class="container">
+            <div class="carousel-caption text-right">
+              <h1>Mejorando cada día</h1>
+              <p>Ponemos al usuario en el centro de todas nuestras decisiones y escuchamos todas vuestras sugerencias.
+              </p>
+              <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Únete ya!</a></p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img class="second-slide slide-image" src="assets/carousel_2.jpg" alt="colaboracion">
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Te damos herramientas</h1>
-            <p>Para que tu grupo y tú podáis comunicaros, podéis utilizar el chat grupal. Cuando queráis crear una
-              votación,
-              nuestro sistema se encargará de todo. ¡Fácil y sencillo!</p>
-            <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Probémoslo!</a></p>
-          </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+    <!--  Columnas del carousel -->
+
+    <div class="container carrousel">
+
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="rounded-circle mb-3" src="assets/chat.jpg" alt="chat grupal" width="140" height="140">
+          <h2>Discute en el chat grupal</h2>
+          <p>En vuestro chat privado podréis discutir acerca de los temas que prefiráis. Establece una jerarquía de
+            roles
+            para personalizar la experiencia a las necesidades de tu grupo.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Acerca del Chat &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="rounded-circle mb-3" src="assets/thumbs_up.jpg" alt="votaciones" width="140" height="140">
+          <h2>Participa en votaciones</h2>
+          <p>Crea votaciones fácilmente de forma online, sin necesidad de salir de casa. Podrás añadir toda variedad de
+            distintas preguntas, incluso votos anónimos.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Acerca de las Votaciones &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="rounded-circle mb-3" src="assets/cara_felis.jpg" alt="seguridad" width="140" height="140">
+          <h2>Seguridad garantizada</h2>
+          <p>Tanto vuestras conversaciones como votaciones están cifradas para que no tengas que preocuparte de tu
+            privacidad.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Acerca del Cifrado &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="features-divider">
+
+      <div class="row features">
+        <div class="col-md-7">
+          <h2 class="features-heading">Elena Ortiz, 20 años <span class="text-purple">Delegada</span></h2>
+          <p class="lead">Gracias a Psyfos he mejorado mucho la comunicación con los estudiantes.
+            Me permite crear encuestas personalizables de forma sencilla y rápida. Llego a todo el alumnado y puedo
+            analizar
+            los resultados al instante.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="features-image img-fluid mx-auto" src="assets/elena_ortiz.jpg" alt="Elena Ortiz">
         </div>
       </div>
-      <div class="carousel-item">
-        <img class="third-slide slide-image" src="assets/carousel_3.jpg" alt="accesible">
-        <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>Mejorando cada día</h1>
-            <p>Ponemos al usuario en el centro de todas nuestras decisiones y escuchamos todas vuestras sugerencias.
-            </p>
-            <p><a class="btn btn-lg btn-primary" routerLink="/login" role="button">¡Únete ya!</a></p>
-          </div>
+
+      <hr class="features-divider">
+
+      <div class="row features">
+        <div class="col-md-7 order-md-2">
+          <h2 class="features-heading">Alfonso Ramos, 47 años <span class="text-purple">Entrenador de baloncesto</span>
+          </h2>
+          <p class="lead">La comunicación con mis jugadores siempre ha sido complicada. Siempre me ha costado hacerles
+            llegar los mensajes y que me hicieran caso.
+            Sin embargo, con Psyfos todo cambió. Gracias a su chat integrado puedo hablar
+            directamente con mi equipo, y si necesitamos decidir algo, las votaciones nos vienen genial.
+          </p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="features-image img-fluid mx-auto" src="assets/alfonso_ramos.jpg" alt="Alfonso Ramos">
         </div>
       </div>
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
+      <hr class="features-divider">
 
-  <!--  Columnas del carousel -->
-
-  <div class="container carrousel">
-
-    <div class="row">
-      <div class="col-lg-4">
-        <img class="rounded-circle mb-3" src="assets/chat.jpg" alt="chat grupal" width="140" height="140">
-        <h2>Discute en el chat grupal</h2>
-        <p>En vuestro chat privado podréis discutir acerca de los temas que prefiráis. Establece una jerarquía de roles
-          para personalizar la experiencia a las necesidades de tu grupo.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">Acerca del Chat &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="rounded-circle mb-3" src="assets/thumbs_up.jpg" alt="votaciones" width="140" height="140">
-        <h2>Participa en votaciones</h2>
-        <p>Crea votaciones fácilmente de forma online, sin necesidad de salir de casa. Podrás añadir toda variedad de
-          distintas preguntas, incluso votos anónimos.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">Acerca de las Votaciones &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="rounded-circle mb-3" src="assets/cara_felis.jpg" alt="seguridad" width="140" height="140">
-        <h2>Seguridad garantizada</h2>
-        <p>Tanto vuestras conversaciones como votaciones están cifradas para que no tengas que preocuparte de tu
-          privacidad.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">Acerca del Cifrado &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    <hr class="features-divider">
-
-    <div class="row features">
-      <div class="col-md-7">
-        <h2 class="features-heading">Elena Ortiz, 20 años <span class="text-purple">Delegada</span></h2>
-        <p class="lead">Gracias a Psyfos he mejorado mucho la comunicación con los estudiantes.
-          Me permite crear encuestas personalizables de forma sencilla y rápida. Llego a todo el alumnado y puedo
-          analizar
-          los resultados al instante.
-        </p>
+      <div class="row features">
+        <div class="col-md-7">
+          <h2 class="features-heading">José López, 67 años <span class="text-purple">Jubilado</span></h2>
+          <p class="lead">Psyfos me ha permitido mantener el contacto con mi comunidad de vecinos sin moverme de la
+            silla.
+            Ya no tengo que preocuparme de mantener la distancia de seguridad.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="features-image img-fluid mx-auto" src="assets/jose_lopez.jpg" alt="Generic placeholder image">
+        </div>
       </div>
-      <div class="col-md-5">
-        <img class="features-image img-fluid mx-auto" src="assets/elena_ortiz.jpg" alt="Elena Ortiz">
-      </div>
+
+      <hr class="features-divider">
+
     </div>
 
-    <hr class="features-divider">
-
-    <div class="row features">
-      <div class="col-md-7 order-md-2">
-        <h2 class="features-heading">Alfonso Ramos, 47 años <span class="text-purple">Entrenador de baloncesto</span>
-        </h2>
-        <p class="lead">La comunicación con mis jugadores siempre ha sido complicada. Siempre me ha costado hacerles
-          llegar los mensajes y que me hicieran caso.
-          Sin embargo, con Psyfos todo cambió. Gracias a su chat integrado puedo hablar
-          directamente con mi equipo, y si necesitamos decidir algo, las votaciones nos vienen genial.
-        </p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <img class="features-image img-fluid mx-auto" src="assets/alfonso_ramos.jpg" alt="Alfonso Ramos">
-      </div>
-    </div>
-
-    <hr class="features-divider">
-
-    <div class="row features">
-      <div class="col-md-7">
-        <h2 class="features-heading">José López, 67 años <span class="text-purple">Jubilado</span></h2>
-        <p class="lead">Psyfos me ha permitido mantener el contacto con mi comunidad de vecinos sin moverme de la silla.
-          Ya no tengo que preocuparme de mantener la distancia de seguridad.</p>
-      </div>
-      <div class="col-md-5">
-        <img class="features-image img-fluid mx-auto" src="assets/jose_lopez.jpg" alt="Generic placeholder image">
-      </div>
-    </div>
-
-    <hr class="features-divider">
-
-  </div>
-
-</main>
+  </main>
 </div>

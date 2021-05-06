@@ -3,7 +3,7 @@
         <div class="col-md-12">
 
             <h3 *ngIf="!this.votacionTerminada">{{getTituloPregunta()}}</h3>
-            <h4 style="color:orange;" *ngIf="!this.votacionTerminada">Pregunta {{getNumeroPregunta()+1}} de
+            <h4 style="color:#544CB5;" *ngIf="!this.votacionTerminada">Pregunta {{getNumeroPregunta()+1}} de
                 {{getNumeroTotalPreguntas()}}
             </h4>
             <h4 *ngIf="this.votacionTerminada">Muchas gracias por participar.</h4>
