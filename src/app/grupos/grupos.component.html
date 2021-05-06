@@ -7,9 +7,9 @@
 
     <ng-template #otherButton>
         <button (click)="this.sendSelectedGroup(i)"
-            class="btn align-self-center col-sel  mb-2">{{grupo.nombre}}</button>
+            class="btn align-self-center col-sel  mb-2">{{grupo.nombre}}<mat-icon class="align-middle secondary">arrow_forward_ios</mat-icon></button>
     </ng-template>
 </div>
 
 <br>
-<button type="submit" class="btn align-self-center">+ Crear grupo</button>
+<button type="submit" class="btn align-self-center"><mat-icon class="align-middle white">add_circle</mat-icon> Crear grupo</button>

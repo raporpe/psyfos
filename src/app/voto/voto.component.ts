@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../data.service';
-
 @Component({
   selector: 'app-voto',
   templateUrl: './voto.component.html',
-  styleUrls: ['./voto.component.scss']
+  styleUrls: ['./voto.component.scss'],
+  providers: [DataService]
 })
+
+
 export class VotoComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
+  votacionActual: any;
+
+  constructor(
+    private route: ActivatedRoute,
     private data: DataService,
-    // private votacion: object
   ) { }
+
   id: number = 0;
+  pregunta: number = 0;
+  votacionTerminada: boolean = false;
 
 
   ngOnInit(): void {
-
-    // this.getId();
-    // this.queryInformation();
-
-
+    this.getId();
+    this.queryInformation();
   }
 
   getId() {
@@ -29,12 +33,36 @@ export class VotoComponent implements OnInit {
     console.log(this.id);
   }
 
-  // queryInformation() {
+  queryInformation() {
+    this.votacionActual = this.data.votacion_por_id(this.id)!;
+    console.log(this.votacionActual);
+  }
 
-  //   this.votacion = this.data.votacion_por_id(this.id);
-  //   console.log(this.votacion);
+  getOpciones() {
+    return this.votacionActual.preguntas[this.pregunta].opciones;
+  }
 
-  // }
+  siguientePregunta() {
+    if (this.pregunta + 1 == this.getNumeroTotalPreguntas()) {
+      this.votacionTerminada = true;
+    } else {
+      this.pregunta++;
+    }
+  }
+
+
+  getNumeroPregunta() {
+    return this.pregunta
+  }
+
+
+  getNumeroTotalPreguntas() {
+    return this.votacionActual.preguntas.length;
+  }
+
+  getTituloPregunta() {
+    return this.votacionActual.preguntas[this.pregunta].enunciado;
+  }
 
   getTitle() {
 

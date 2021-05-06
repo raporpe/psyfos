@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,6 @@ export class DataService {
   usuarios: usuario[];
   grupos: grupo[];
   votaciones: votacion[]
-
 
   constructor() {
 
@@ -22,8 +22,13 @@ export class DataService {
     new grupo(2, 'Familia Ruiz', 'Grupo de la familia Ruiz', [], [], [])
     ]
 
-    this.votaciones = [new votacion(0, "Construcción Piscina", true, this.usuarios, [new pregunta("¿Quiere que se construya una piscina en la comunidad ? ", ['Sí', 'No'])]),
-    new votacion(1, "Renovación caldera", true, this.usuarios, [new pregunta("¿Cómo de importante considera que es renovar la caldera?", ['1', '2', '3', '4', '5'])])
+    this.votaciones = [new votacion(0, "Construcción Piscina", true, this.usuarios, [new pregunta("¿Quiere que se construya una piscina en la comunidad ? ", ['Sí', 'No']),
+    new pregunta("¿Qué rango de precios está dispuesto a gastarse? ", ['>500€', '<500€']),
+    new pregunta("¿Desearía poner césped en la piscina? ", ['Sí', 'No'])
+    ]),
+    new votacion(1, "Renovación caldera", true, this.usuarios, [new pregunta("¿Cómo de importante considera que es renovar la caldera?", ['1', '2', '3', '4', '5']),
+    new pregunta("¿Ha experimentado algún problema con la calefacción?", ['Sí, todos los días', 'A veces', 'Casi nunca', 'Nunca']),
+    new pregunta("¿Su vivienda tiene problemas de aislamiento?", ['Sí', 'No'])])
     ]
 
     this.grupos[0].añadir_votacion(this.votaciones[0]);
@@ -39,11 +44,31 @@ export class DataService {
     for (var grupo_index = 0; grupo_index < this.grupos.length; grupo_index++) {
       this.usuarios[0].añadir_grupo(this.grupos[grupo_index]);
 
+
+
     }
 
+
+
+
   }
-  votacion_por_id(id: number) {
+
+
+  votacion_por_id(id: number): votacion | undefined {
     return this.votaciones.find(x => x.id == id)
+  }
+
+  getGrupos(): grupo[] | undefined {
+    return this.grupos
+
+  }
+
+  getUsuarios(): usuario[] | undefined {
+    return this.usuarios;
+  }
+
+  getVotaciones(): votacion[] | undefined {
+    return this.votaciones;
   }
 }
 
@@ -98,7 +123,7 @@ class grupo {
   }
 }
 
-class votacion {
+export class votacion {
   id: number;
   titulo: string;
   estado: boolean;

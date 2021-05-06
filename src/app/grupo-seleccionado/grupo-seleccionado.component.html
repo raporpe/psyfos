@@ -1,23 +1,23 @@
-<div class="">
-    <h1>{{grupo.nombre}}</h1>
+<div>
+    <h1><mat-icon class="align-middle secondary">photo</mat-icon> {{grupo.nombre}}</h1>
     <p>{{grupo.descripcion}}</p>
 
     <div class="mb-3">
-        <button type="submit" class="btn mr-2">🗨️ Chatear</button>
-        <button type="submit" class="btn">- Salir del grupo</button>
+        <button type="submit" class="btn mr-2"><mat-icon class="align-middle white">chat_bubble</mat-icon> Chatear</button>
+        <button type="submit" class="btn"><mat-icon class="align-middle white">logout</mat-icon> Salir del grupo</button>
     </div>
 
-    <p class="col-md-4" style="font-weight: bold;">Votaciones</p>
+    <p class="col-md-4 bold">Votaciones</p>
 
     <div *ngFor="let votacion of grupo.votaciones; let i = index">
 
         <div class="votacion">
-            {{votacion.titulo}}
+            {{i+1}}. {{votacion.titulo}}
             <br>
 
-            <button type="submit" routerLink="/voto/1" class="btn mr-2">📥Votar</button>
-            <button type="submit" class="btn mr-2">📝Editar</button>
-            <button type="submit" class="btn mr-2">- Eliminar</button>
+            <button type="submit" routerLink="/voto/{{votacion.id}}" class="btn mr-2"><mat-icon class="align-middle white">checklist_rtl</mat-icon> Votar</button>
+            <button type="submit" class="btn mr-2"><mat-icon class="align-middle white">edit_note</mat-icon> Editar</button>
+            <button type="submit" class="btn mr-2"><mat-icon class="align-middle white">delete</mat-icon> Eliminar</button>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
-<h1>
-  <mat-icon class="secondary">forum</mat-icon> Psyfos
+<h1 class="secondary" style="font-weight: bolder;">
+  <mat-icon class="primary">forum</mat-icon> Psyfos
 </h1>
 
 <div class="row gx-5 gy-5">
@@ -36,7 +36,7 @@
   </form>
 
 
-  <form class="col-md-6 p-3">
+  <form class="col-md-6 p-3 vl">
     <h3>¿Sin cuenta?</h3>
     <!-- Name register input -->
     <div class="form-outline mb-4">
@@ -57,7 +57,7 @@
         [ngClass]="{'is-invalid' : !validateRegisterEmail() && (registerEmailForm.dirty || registerEmailForm.touched)}" />
       <div class="invalid-feedback"
         *ngIf="!validateRegisterEmail() && (registerEmailForm.dirty || registerEmailForm.touched)">
-        Comprueba que tu correo electrónico está bien escrita.</div>
+        Comprueba que tu correo electrónico está bien escrito.</div>
     </div>
 
     <!-- Password register input -->
