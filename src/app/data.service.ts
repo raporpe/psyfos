@@ -172,12 +172,12 @@ export class pregunta {
   }
 
 }
-class opcion {
+export class opcion {
   enunciado: string;
   votos: number;
   constructor(enunciado: string) {
     this.enunciado = enunciado;
-    this.votos = 0;
+    this.votos = Math.floor(Math.random() * 10 + 1);
   }
   public aumentar_voto() {
     this.votos += 1;

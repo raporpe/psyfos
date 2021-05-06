@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+
             <h3 *ngIf="!this.votacionTerminada">{{getTituloPregunta()}}</h3>
-            <h4 *ngIf="!this.votacionTerminada">Pregunta {{getNumeroPregunta()+1}} de {{getNumeroTotalPreguntas()}}
+            <h4 style="color:orange;" *ngIf="!this.votacionTerminada">Pregunta {{getNumeroPregunta()+1}} de
+                {{getNumeroTotalPreguntas()}}
             </h4>
             <h4 *ngIf="this.votacionTerminada">Muchas gracias por participar.</h4>
             <div class="panel-body" *ngIf="!this.votacionTerminada">
@@ -10,57 +12,39 @@
                     <li class="list-group-item" *ngFor="let opcion of getOpciones();">
                         <div class="radio">
                             <label>
-                                <input type="radio" onselect="opcion.aumentar_votos()" name="optionsRadios">
+                                <input type="radio" name="optionsRadios">
                                 {{opcion.enunciado}}
                             </label>
                         </div>
-        
+
                     </li>
                 </ul>
             </div>
-            <div *ngFor="let opcion of getOpciones();" >
-                <strong>{{opcion.enunciado}}</strong><span class="pull-right">{{opcion.votos}}</span>
-                <div class="progress">
-                <div class="progress-bar bg-success" style="width: 30%"></div>
-            </div>
             <div class="mt-2">
-                <button *ngIf="!this.votacionTerminada" type="button" class="btn btn-success btn-sm"
-                    (click)="siguientePregunta(); ">Vote</button>
+                <button *ngIf="!this.votacionTerminada" type="button" class="btn btn-success "
+                    (click)="siguientePregunta(); ">Votar</button>
+                <button style="display: inline;float:right" class="btn btn-danger" type="button"
+                    routerLink="/dashboard">Salir de la votación
+                </button>
             </div>
 
-            <!-- Modal -->
+            <!-- Final de la votación -->
             <div *ngIf="this.votacionTerminada">
-                <div *ngFor="let opcion of getOpciones();" >
-                    <strong>{{opcion.enunciado}}</strong><span class="pull-right">{{opcion.votos}}</span>
-                    <div class="progress">
-                    <div class="progress-bar bg-success" style="width: 30%"></div>
-                </div>
+                <div style="padding: 5%" *ngFor="let pregunta of getPreguntas(); let p = index;">
+                    <h5>{{pregunta.enunciado}}</h5>
+                    <div *ngFor="let opcion of pregunta.opciones;">
+                        <strong>{{opcion.enunciado}}</strong><span class="pull-right">{{opcion.votos}}</span>
 
-                <!-- </div>
-                <strong>Windows PC</strong><span class="pull-right">30%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-success" style="width: 30%"></div>
-                </div>
-                <strong>Mac</strong><span class="pull-right">40%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-info" style="width: 40%"></div>
-                </div>
-                <strong>iPad/iPhone</strong><span class="pull-right">10%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-warning" style="width: 10%"></div>
-                </div>
-                <strong>Android</strong><span class="pull-right">5%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-danger" style="width: 5%"></div>
-                </div>
-                <strong>Others</strong><span class="pull-right">15%</span>
-                <div class="progress" style="height: 20px;">
-                    <div class="progress-bar" style="width: 15%;"></div>
-                </div> -->
+                        <div class="progress">
+                            <div class="progress-bar bg-success"
+                                [ngStyle]="{'width.%': opcion.votos/getTotalVotos(p)*100}">
+                            </div>
 
+                        </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>

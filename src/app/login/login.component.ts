@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     this.queryInformation();
   }
 
-
   ngOnInit(): void {
   }
 
@@ -77,6 +76,8 @@ export class LoginComponent implements OnInit {
     this.usuarios = this.data.getUsuarios()!;
     
   }
+
+
 
   validateLoginEmail(): boolean {
     return this.loginEmail.length > 1;

@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-layout.component.scss']
 })
 export class AppLayoutComponent implements OnInit {
-
   constructor() { }
-
+  show: boolean=true
   ngOnInit(): void {
   }
 

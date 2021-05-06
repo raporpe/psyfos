@@ -1,4 +1,4 @@
-<div class="bg-primary" style="padding: 5%;">
+<div class="bg-primary py-5">
 
     <div class="d-flex justify-content-center align-items-center h-100">
         <div class="col-md-12 col-xl-9" style="max-width: 70rem;">
@@ -23,11 +23,11 @@
                 <div class="col-xl-3 col-sm-6" routerLink="/" role="button">
                     <div class="card-layout mini-card p-3 mb-3">
                         <mat-icon class="align-bottom primary">settings</mat-icon>
-                        <p> Configuración</p>
+                        <p> Ajustes</p>
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-sm-6" routerLink="/login">
+                <div class="col-xl-3 col-sm-6" routerLink="/login" *ngIf="show">
                     <div class="card-layout mini-card p-3 mb-3 red_hover" s>
                         <p>
                             <mat-icon class="align-middle white">close</mat-icon> Cerrar sesión
@@ -43,8 +43,4 @@
 
 
     </div>
-    <footer class="container mb-5" style="text-align: center;">
-        <p>&copy; All rights reserved, 2021 Psyfos. &middot; <a style="color: white;" href="#">Privacidad</a>
-            &middot; <a style="color:white;" href="#">Términos</a></p>
-    </footer>
 </div>
