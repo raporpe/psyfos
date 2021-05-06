@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DataService, usuario } from '../data.service';
-import {FormsModule} from '@angular/forms'
-import {Router} from '@angular/router';
+import { FormsModule } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   registerName: string = "";
   registerEmail: string = "";
   registerPassword: string = "";
-  usuarios: usuario[] ;
-  
+  usuarios: usuario[];
+
 
   constructor(private data: DataService, private router: Router) {
     this.usuarios = []
@@ -32,55 +32,61 @@ export class LoginComponent implements OnInit {
 
   checkForm() {
 
-    
-      
+
+
 
   }
 
-  makeLogin(data:any){
+  makeLogin(data: any) {
     console.log(data)
     // alert("Entered Email id : " + data.loginEmailForm);
     // alert("Entered Email id : " + data.loginPasswordForm);
-    var usuario = this.encuentraUsuario(data.loginEmailForm,data.loginPasswordForm);
+    var usuario = this.encuentraUsuario(data.loginEmailForm, data.loginPasswordForm);
 
-    if (usuario !== undefined){
+    if (usuario !== undefined) {
       this.router.navigate(['/dashboard']);
-    }else{
-      
+    } else {
+
       alert('wrong credentials')
     }
 
 
   }
 
-  makeRegister(data:any){
+  makeRegister(data: any) {
     console.log(data);
 
-    var nuevo_usuario: usuario = new usuario(0, data.registerNameForm,data.registerEmailForm, data.registerPasswordForm, []);
+    var nuevo_usuario: usuario = new usuario(0, data.registerNameForm, data.registerEmailForm, data.registerPasswordForm, []);
     this.data.registrarUsuario(nuevo_usuario);
     this.queryInformation();
     console.log(this.usuarios)
   }
 
-  encuentraUsuario(email:string,contraseña:string): usuario | undefined{
+  encuentraUsuario(email: string, contraseña: string): usuario | undefined {
     console.log(this.usuarios)
-    for (var usuario of this.usuarios){
-        if (usuario.email === email && usuario.contraseña === contraseña){
-          return usuario;
-        
-        }
+    for (var usuario of this.usuarios) {
+      if (usuario.email === email && usuario.contraseña === contraseña) {
+        return usuario;
+
+      }
     }
     return undefined;
-    }
+  }
   queryInformation() {
     this.usuarios = this.data.getUsuarios()!;
-    
+
   }
 
 
+  validarLogin() {
+
+  }
+
 
   validateLoginEmail(): boolean {
-    return this.loginEmail.length > 1;
+    var regexp = new RegExp("^[^@\s]+@[^@\s\.]+\.[^@\.\s]+$");
+    var email = regexp.test(this.loginEmail);
+    return email;
   }
 
   validateLoginPassword(): boolean {
@@ -100,6 +106,6 @@ export class LoginComponent implements OnInit {
     return this.registerPassword.length > 8;
   }
 
-  
+
 
 }

@@ -13,7 +13,7 @@
         </button>
     </div>
 
-    <p class="col-md-4 bold">Votaciones</p>
+    <p class="bold mt-4 ml-3">Votaciones</p>
 
     <div *ngFor="let votacion of grupo.votaciones; let i = index">
 
@@ -21,13 +21,13 @@
             {{i+1}}. {{votacion.titulo}}
             <br>
 
-            <button type="submit" routerLink="/voto/{{votacion.id}}" class="btn mr-2">
+            <button type="submit" routerLink="/voto/{{votacion.id}}" class="btn mr-2 mt-2">
                 <mat-icon class="align-middle white">checklist_rtl</mat-icon> Votar
             </button>
-            <button type="submit" class="btn mr-2">
+            <button type="submit" class="btn mr-2 mt-2">
                 <mat-icon class="align-middle white">edit_note</mat-icon> Editar
             </button>
-            <button type="submit" class="btn mr-2">
+            <button type="submit" class="btn mr-2 mt-2">
                 <mat-icon class="align-middle white">delete</mat-icon> Eliminar
             </button>
         </div>
