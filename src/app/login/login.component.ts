@@ -19,15 +19,9 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
   }
 
-  checkForm() {
-
-
-
-  }
 
   validateLoginEmail(): boolean {
     return this.loginEmail.length > 1;

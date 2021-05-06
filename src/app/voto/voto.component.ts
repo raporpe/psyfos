@@ -73,10 +73,10 @@ export class VotoComponent implements OnInit {
 
   }
 
-  getTotalVotos(pregunta: number) :number {
-    let resultado = this.votacionActual.preguntas[pregunta].opciones.reduce((sum: number, current: opcion) => sum + current.votos);
-    console.log(resultado)
-    return resultado
+  getTotalVotos(pregunta: number): number {
+    let resultado = this.votacionActual.preguntas[pregunta].opciones.reduce((sum: number, actual: opcion) => sum + actual.votos, 0);
+    console.log(resultado);
+    return resultado;
   }
 
 
