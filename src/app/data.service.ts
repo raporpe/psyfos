@@ -80,11 +80,13 @@ export class DataService {
   }
 
   getShowButton() {
+    this.showButton = localStorage.getItem('showButton') ===  'true';
     return this.showButton;
   }
 
   setShowButton(status: boolean) {
     this.showButton = status;
+    localStorage.setItem('showButton', String(status));
   }
 
 
