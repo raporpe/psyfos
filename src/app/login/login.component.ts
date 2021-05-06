@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   errorLogin = false;
   errorRegister = false;
+  confirmarRegistro = false;
 
   constructor(private data: DataService, private router: Router) {
     this.usuarios = []
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.setItem("logged", "false");
+
   }
 
 
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/dashboard']);
       this.errorLogin = false;
-      localStorage.setItem("logged", "true");
 
 
     } else {
@@ -62,6 +62,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('name', this.registerName);
       localStorage.setItem('email', this.registerEmail);
       localStorage.setItem('password', this.registerPassword);
+
+      this.confirmarRegistro = true;
 
     } else {
       this.errorRegister = true;

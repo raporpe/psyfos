@@ -1,15 +1,19 @@
 <h2 class="mb-5">Mis grupos</h2>
 
 <div *ngFor="let grupo of grupos; let i = index">
-    <div *ngIf="i===this.grupoSeleccionado; else otherButton">
-        <button (click)="this.sendSelectedGroup(i)" class="btn align-self-center mb-2">{{grupo.nombre}}</button>
+    <div *ngIf="i===this.grupoSeleccionado; else otherButton;">
+        <button (click)="this.sendSelectedGroup(i)"
+            class="btn align-self-center mb-2 hover-button-primary">{{grupo.nombre}}</button>
     </div>
 
     <ng-template #otherButton>
         <button (click)="this.sendSelectedGroup(i)"
-            class="btn align-self-center col-sel  mb-2">{{grupo.nombre}}<mat-icon class="align-middle secondary">arrow_forward_ios</mat-icon></button>
+            class="btn align-self-center col-sel  mb-2 hover-button-alternative">{{grupo.nombre}}<mat-icon
+                class="align-middle secondary">arrow_forward_ios</mat-icon></button>
     </ng-template>
 </div>
 
 <br>
-<button type="submit" class="btn align-self-center"><mat-icon class="align-middle white">add_circle</mat-icon> Crear grupo</button>
+<button type="submit" class="btn align-self-center hover-button-primary">
+    <mat-icon class="align-middle white">add_circle</mat-icon> Crear grupo
+</button>

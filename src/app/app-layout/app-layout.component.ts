@@ -14,20 +14,26 @@ export class AppLayoutComponent implements OnInit {
     this.show = false;
 
     this.router.events.subscribe((event: Event) => {
-      this.show = localStorage.getItem("logged") == "true";
+      if (this.router.url === '/login') {
+        this.show = false;
+      } else {
+        this.show = true;
+
+      }
     })
   }
   show: boolean = false
 
 
   ngOnInit(): void {
-    this.show = localStorage.getItem("logged") == "true";
+    if (this.router.url === '/login') {
+      this.show = false;
+    } else {
+      this.show = true;
+
+    }
   }
 
-  logOut() {
-    localStorage.setItem("logged", "false");
-    this.router.navigate(['/login']);
-  }
 
 }
 

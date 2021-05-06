@@ -12,3 +12,13 @@ button{
     border: 2px;
     border-color:#9089E4; 
 }
+
+.hover-button-primary{
+    color:$forms;
+  
+  }
+
+.hover-button-alternative:hover{
+    color:$primary!important;
+}
+  

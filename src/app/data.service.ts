@@ -80,7 +80,7 @@ export class DataService {
   }
 
   getShowButton() {
-    this.showButton = localStorage.getItem('showButton') ===  'true';
+    this.showButton = localStorage.getItem('showButton') === 'true';
     return this.showButton;
   }
 

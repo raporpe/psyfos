@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 
@@ -21,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   // private route: ActivatedRoute;
 
-  constructor(private data: DataService
+  constructor(private data: DataService, private router: Router
   ) {
 
     this.usuarios = []
@@ -32,6 +33,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.data.setShowButton(true);
+
   }
 
   queryInformation() {
