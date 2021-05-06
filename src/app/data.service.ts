@@ -12,9 +12,9 @@ export class DataService {
 
   constructor() {
 
-    this.usuarios = [new usuario(0, 'Francisco Ruiz', 'asdf', []),
-    new usuario(1, 'Elena Ortiz', 'asdf', []),
-    new usuario(2, 'Alfonso Ramos', 'asdf', [])
+    this.usuarios = [new usuario(0, 'Francisco Ruiz','ruiz@gmail.com', 'asdf', []),
+    new usuario(1, 'Elena Ortiz', 'asdf','ruiz@gmail.com', []),
+    new usuario(2, 'Alfonso Ramos', 'asdf','ruiz@gmail.com', [])
     ]
 
     this.grupos = [new grupo(0, 'Vecinos Ribaseca', '¡Buenas! En este grupo estamos dispuestos a debatir de forma democrática y con respeto.', [], [], []),
@@ -58,6 +58,11 @@ export class DataService {
     return this.votaciones.find(x => x.id == id)
   }
 
+  registrarUsuario(nuevoUsuario:usuario){
+    
+    this.usuarios.push(nuevoUsuario)
+  }
+
   getGrupos(): grupo[] | undefined {
     return this.grupos
 
@@ -75,16 +80,18 @@ export class DataService {
 
 
 
-class usuario {
+export class usuario {
   id: number;
   nombre_usuario: string;
   contraseña: string;
+  email: string;
   foto_perfil: string;
   grupos: grupo[];
 
-  constructor(id: number, nombre_usuario: string, contraseña: string, grupos: grupo[], foto_perfil: string = "assets/foto_perfil_defecto.png") {
-    this.id = id
+  constructor(id: number,nombre_usuario: string, email: string, contraseña:string , grupos: grupo[], foto_perfil: string = "assets/foto_perfil_defecto.png") {
+    this.id = id;
     this.nombre_usuario = nombre_usuario;
+    this.email = email;
     this.contraseña = contraseña;
     this.foto_perfil = foto_perfil;
     this.grupos = grupos;
@@ -96,7 +103,7 @@ class usuario {
 }
 
 
-class grupo {
+export class grupo {
   id: number;
   nombre: string;
   descripcion: string;
@@ -147,7 +154,7 @@ export class votacion {
   }
 }
 
-class pregunta {
+export class pregunta {
   enunciado: string;
   opciones: opcion[];
 
